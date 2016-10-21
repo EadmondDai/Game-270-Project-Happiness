@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Created by Eadmond 10.20.2016
+
 public class CubeMove : MonoBehaviour {
 
     public float Speed = 1;
@@ -17,7 +19,6 @@ public class CubeMove : MonoBehaviour {
         //if(Input.GetKeyDown("Horizontal"))
         {
             float moveInput = Input.GetAxis("Horizontal");
-            Debug.Log(moveInput);
             Vector3 moveValue = new Vector3(moveInput, 0, 0);
             transform.Translate(moveValue * Speed * deltaTime, Space.World);
         }
