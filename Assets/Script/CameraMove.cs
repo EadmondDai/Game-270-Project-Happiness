@@ -114,17 +114,10 @@ public class CameraMove : MonoBehaviour
         if(timePerc >= 1)
         {
             // Check if there is next element in the array, if not, stop all the moving.
-            if(NextPosIndex >= CameraTransArray.Count)
-            {
-                StartPos = Vector3.zero;
-                TargetPos = Vector3.zero;
-                NextPosIndex = 0;
-            }
-            else
+            if(NextPosIndex < CameraTransArray.Count)
             {
                 Transform nextTrans = (Transform)CameraTransArray[NextPosIndex++];
-                StartPos = transform.position;
-                TargetPos = nextTrans.position;
+                MoveCameraToPoint(nextTrans);
             }
 
         }else
