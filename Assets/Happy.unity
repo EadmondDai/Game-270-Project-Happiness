@@ -2581,12 +2581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee60d4d3be70554f841228f95a9d1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rotation: {x: 0, y: 0, z: 0, w: 0}
-  CameraPosNameBas: CameraPos
-  Speed: 2
   DistanceAllow: 0.2
-  pos1: {fileID: 232718585}
-  pos2: {fileID: 452877783}
+  CameraPosNameBas: CameraPos
+  CameraPosContainer: {fileID: 1824894485}
+  Speed: 2
+  StartPos: {x: 0, y: 0, z: 0}
+  TargetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1136464345
 GameObject:
   m_ObjectHideFlags: 0

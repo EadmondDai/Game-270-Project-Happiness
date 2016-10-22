@@ -4,19 +4,21 @@ using System.Collections;
 // Created by Eadmond, 10.21.2016
 // The script enable the camera follow certain routine provided by the level.
 // Other script should provide a gameobject contains all the routine point named from CameraPos1.
-// The Camera will stay at the first camera point. The level can ask the camera to move when it's ready.
+// The Camera will move to the first camera point, then continue to next point, untill there is no more point.
 
 
 public class CameraMove : MonoBehaviour
 {
-
-    public Quaternion Rotation;
+    // Maybe use this in the future, to rotate the camera.
+    //public Quaternion Rotation;
 
     public float DistanceAllow = 0.2f;
 
     private ArrayList CameraTransArray;
 
     public string CameraPosNameBas = "CameraPos";
+
+    public GameObject CameraPosContainer;
 
     // Related to moving the camera. Using Lerp.
 
@@ -26,7 +28,9 @@ public class CameraMove : MonoBehaviour
 
     private float JourneyTime;
 
-    private int PosIndex;
+    private float JourneyDistance;
+
+    private int NextPosIndex;
 
     public Vector3 StartPos;
 
@@ -59,7 +63,7 @@ public class CameraMove : MonoBehaviour
         }
 
         // Move to the first point.
-        PosIndex = 1;
+        NextPosIndex = 1;
         MoveCameraToPoint((Transform)CameraTransArray[0]);
     }
 
@@ -67,13 +71,16 @@ public class CameraMove : MonoBehaviour
     {
         StartPos = transform.position;
         TargetPos = targetTrans.position;
+
+        JourneyDistance = Vector3.Distance(StartPos, TargetPos);
+        StartTime = Time.time;
     }
 
     // Use this to make the camera move from one pos to another.
-    public void StartMove()
-    {
+    //public void StartMove()
+    //{
 
-    }
+    //}
 
     public bool IsTheLastPos()
     {
@@ -89,19 +96,42 @@ public class CameraMove : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
-        StartTime = Time.time;
-
-        GameObject manager = GameObject.Find("/CameraPosContainer");
-        SetCameraPosWithGameobject(manager);
+    { 
+        //GameObject manager = GameObject.Find("/CameraPosContainer");
+        SetCameraPosWithGameobject(CameraPosContainer);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (CameraTransArray == null || CameraTransArray.Count == 0)
+            return;
+
         JourneyTime = Time.time - StartTime;
         float timePerc = JourneyTime / Vector3.Distance(StartPos, TargetPos) * Speed;
-        transform.position = Vector3.Lerp(StartPos, TargetPos, timePerc);
+
+        // Finished this little trip.
+        if(timePerc >= 1)
+        {
+            // Check if there is next element in the array, if not, stop all the moving.
+            if(NextPosIndex >= CameraTransArray.Count)
+            {
+                StartPos = Vector3.zero;
+                TargetPos = Vector3.zero;
+                NextPosIndex = 0;
+            }
+            else
+            {
+                Transform nextTrans = (Transform)CameraTransArray[NextPosIndex++];
+                StartPos = transform.position;
+                TargetPos = nextTrans.position;
+            }
+
+        }else
+        {
+            transform.position = Vector3.Lerp(StartPos, TargetPos, timePerc);
+        }
+
     }
 
 }
