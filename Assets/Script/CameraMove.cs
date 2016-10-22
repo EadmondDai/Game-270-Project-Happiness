@@ -36,6 +36,8 @@ public class CameraMove : MonoBehaviour
 
     public Vector3 TargetPos;
 
+    private Vector3 MoveDirection;
+
     private bool test = true;
 
     public void SetCameraPosWithGameobject(GameObject cameraPosContainer)
@@ -71,6 +73,8 @@ public class CameraMove : MonoBehaviour
     {
         StartPos = transform.position;
         TargetPos = targetTrans.position;
+
+        MoveDirection = TargetPos - StartPos;
 
         JourneyDistance = Vector3.Distance(StartPos, TargetPos);
         StartTime = Time.time;
@@ -113,18 +117,35 @@ public class CameraMove : MonoBehaviour
         // Finished this little trip.
         if(timePerc >= 1)
         {
+            MoveDirection = Vector3.zero;
+
             // Check if there is next element in the array, if not, stop all the moving.
-            if(NextPosIndex < CameraTransArray.Count)
+            if (NextPosIndex < CameraTransArray.Count)
             {
                 Transform nextTrans = (Transform)CameraTransArray[NextPosIndex++];
                 MoveCameraToPoint(nextTrans);
             }
-
         }else
         {
             transform.position = Vector3.Lerp(StartPos, TargetPos, timePerc);
         }
-
     }
+
+
+    // Get current moving direction of the camera, if it is vector3.zero, means the camera is not moving.
+    public Vector3 GetCameraMovingDirection()
+    {
+        return MoveDirection;
+    }
+
+    // Get the Camera view frame in the world.
+    public void GetCameraViewRect(out float width, out float height)
+    {
+        Vector3 size = transform.FindChild("CameraViewFrame").GetComponent<MeshRenderer>().bounds.size;
+
+        width = size.x;
+        height = size.y;
+    }
+
 
 }
