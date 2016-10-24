@@ -119,6 +119,7 @@ MonoBehaviour:
   OrbitTrans: {fileID: 0}
   RotateSpeed: 40
   OrbitDegree: 1
+  Size: 1
 --- !u!114 &114000014001101812
 MonoBehaviour:
   m_ObjectHideFlags: 1
