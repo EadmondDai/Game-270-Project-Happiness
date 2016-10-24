@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 // Created by Eadmond, 10.21.2016
 // The script enable the camera follow certain routine provided by the level.
 // Other script should provide a gameobject contains all the routine point named from CameraPos1.
 // The Camera will move to the first camera point, then continue to next point, untill there is no more point.
+// If the character is outside of the cameraview, it will restart the scene.
 
 
 public class CameraMove : MonoBehaviour
@@ -19,6 +21,8 @@ public class CameraMove : MonoBehaviour
     public string CameraPosNameBas = "CameraPos";
 
     public GameObject CameraPosContainer;
+
+    public GameObject PlayerObj;
 
     // Related to moving the camera. Using Lerp.
 
@@ -129,6 +133,14 @@ public class CameraMove : MonoBehaviour
         {
             transform.position = Vector3.Lerp(StartPos, TargetPos, timePerc);
         }
+
+        // Check if the playe is outside of the camera view.
+
+        Vector3 screePoint = Camera.main.WorldToViewportPoint(PlayerObj.transform.position);
+        bool onScreen = screePoint.x > 0 && screePoint.x < 1 && screePoint.y > 0 && screePoint.y < 1 && screePoint.z > 0;
+        if (!onScreen)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 
 

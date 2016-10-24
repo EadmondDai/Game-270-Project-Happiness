@@ -3,7 +3,7 @@ using System.Collections;
 
 // Created by Eadmond 10.20.2016
 
-public class CubeMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour {
 
     public float Speed = 1;
 
@@ -32,4 +32,5 @@ public class CubeMove : MonoBehaviour {
         
         	
 	}
+
 }
