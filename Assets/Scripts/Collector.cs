@@ -23,6 +23,7 @@ public class Collector: MonoBehaviour {
     {
         if( col.tag == "Friend")
         {
+            partsToCollect--;
             changeFogDensity(-densityStep); 
         }
         //todo
