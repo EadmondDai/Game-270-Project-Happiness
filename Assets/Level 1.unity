@@ -90,6 +90,11 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &357708587 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012818748770, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2137842276}
 --- !u!1 &678076404
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +295,7 @@ MonoBehaviour:
   DistanceAllow: 0.2
   CameraPosNameBas: CameraPos
   CameraPosContainer: {fileID: 969826152}
+  PlayerObj: {fileID: 357708587}
   Speed: 1
   StartPos: {x: 0, y: 0, z: 0}
   TargetPos: {x: 0, y: 0, z: 0}
