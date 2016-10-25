@@ -4,17 +4,23 @@ using System.Collections;
 // Created by Eadmond 10.20.2016
 // This script is responsiable for control the player's moving and play particle ring when collect a friend.
 
+// This script access Orbit2D script;
+// This script access PlayerHaloController script;
+
 public class PlayerMove : MonoBehaviour {
 
     public float Speed = 1;
 
     private ParticleSystem Ring;
 
+    private PlayerHaloController HaloController;
+
     bool test = false;
 
 	// Use this for initialization
 	void Start () {
         Ring = GetComponent<ParticleSystem>();
+        HaloController = GetComponent<PlayerHaloController>();
     }
 	
 	// Update is called once per frame
@@ -37,10 +43,16 @@ public class PlayerMove : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("You hitted something.");
         if(col.tag == "Friend")
         {
-            Ring.Play();
+            Orbit2D orbit2DScript = col.GetComponent<Orbit2D>();
+
+            if(!orbit2DScript.IsItOrbiting())
+            {
+                Ring.Play();
+                orbit2DScript.SetOrbitTrans(transform);
+                HaloController.AddLight();
+            }
         }
 
     }

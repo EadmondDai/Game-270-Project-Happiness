@@ -14,6 +14,8 @@ public class Orbit2D : MonoBehaviour {
     // The Size control how big the gameobject is and the mass of the gameobject.
     public float Size = 1;
 
+    public bool IsOrbiting = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -21,6 +23,9 @@ public class Orbit2D : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (OrbitTrans == null)
+            return;
 
         float timeDelta = Time.deltaTime;
 
@@ -34,4 +39,16 @@ public class Orbit2D : MonoBehaviour {
         transform.RotateAround(OrbitTrans.position, Vector3.forward, OrbitDegree / Size);	
 
 	}
+
+    public void SetOrbitTrans(Transform trans)
+    {
+        OrbitTrans = trans;
+
+        IsOrbiting = true;
+    }
+
+    public bool IsItOrbiting()
+    {
+        return IsOrbiting;
+    }
 }
