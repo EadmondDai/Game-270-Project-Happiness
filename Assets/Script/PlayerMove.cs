@@ -55,6 +55,11 @@ public class PlayerMove : MonoBehaviour {
             }
         }
 
+        if(col.tag == "Enemy")
+        {
+            HaloController.MinusLight();
+        }
+
     }
 
 

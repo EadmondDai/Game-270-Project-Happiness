@@ -8,8 +8,9 @@ public class Orbit2D : MonoBehaviour {
 
     public Transform OrbitTrans;
 
-    public float RotateSpeed = 1;
-    public float OrbitDegree = 1;
+    public float RotateSpeed = 10;
+    public float OrbitDegree = 2;
+    public float radius = 1.0f;
 
     // The Size control how big the gameobject is and the mass of the gameobject.
     public float Size = 1;
@@ -36,7 +37,11 @@ public class Orbit2D : MonoBehaviour {
 
         transform.Rotate(rotateAix, RotateSpeed * timeDelta / Size);
 
-        transform.RotateAround(OrbitTrans.position, Vector3.forward, OrbitDegree / Size);	
+        transform.RotateAround(OrbitTrans.position, Vector3.forward, OrbitDegree / Size);
+
+        Vector3 desiredPosition = (transform.position - OrbitTrans.position).normalized * radius + OrbitTrans.position;
+
+        transform.position = Vector3.MoveTowards(transform.position, desiredPosition, timeDelta * OrbitDegree);
 
 	}
 

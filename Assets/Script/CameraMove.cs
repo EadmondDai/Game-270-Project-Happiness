@@ -139,7 +139,7 @@ public class CameraMove : MonoBehaviour
         Vector3 screePoint = Camera.main.WorldToViewportPoint(PlayerObj.transform.position);
         bool onScreen = screePoint.x > 0 && screePoint.x < 1 && screePoint.y > 0 && screePoint.y < 1 && screePoint.z > 0;
         if (!onScreen)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerObj.GetComponent<MySceneManager>().RestartLevel();
 
     }
 
