@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OrbitTrans: {fileID: 0}
-  RotateSpeed: 1
+  RotateSpeed: 20
   OrbitDegree: 1
+  radius: 1
   Size: 1
   IsOrbiting: 0

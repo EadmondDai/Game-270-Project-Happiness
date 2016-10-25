@@ -42,7 +42,9 @@ public class CameraMove : MonoBehaviour
 
     private Vector3 MoveDirection;
 
-    private bool test = true;
+    // Related to Restart;
+
+    public GameObject MySceneManaObj;
 
     public void SetCameraPosWithGameobject(GameObject cameraPosContainer)
     {
@@ -139,7 +141,12 @@ public class CameraMove : MonoBehaviour
         Vector3 screePoint = Camera.main.WorldToViewportPoint(PlayerObj.transform.position);
         bool onScreen = screePoint.x > 0 && screePoint.x < 1 && screePoint.y > 0 && screePoint.y < 1 && screePoint.z > 0;
         if (!onScreen)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        {
+            MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
+
+            MySceneManagerScript.RestartLevel();
+        }
+            
 
     }
 

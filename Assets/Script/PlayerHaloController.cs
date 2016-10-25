@@ -5,6 +5,7 @@ using System.Collections;
 // This script is used to control the intensity of halo of the player
 
 // This script is accessed by PlayerMove script;
+// This script access the MySceneManager script;
 
 public class PlayerHaloController : MonoBehaviour {
 
@@ -13,6 +14,8 @@ public class PlayerHaloController : MonoBehaviour {
     public float AddHaloRangeAmount = 0.3f;
 
     public Light HaloLight;
+
+    public GameObject MySceneManaObj;
 
     // Add some light to the world.
     public void AddLight()
@@ -25,6 +28,14 @@ public class PlayerHaloController : MonoBehaviour {
     {
         HaloLight.range -= AddHaloAmount;
         HaloLight.intensity -= AddHaloAmount;
+
+        if (HaloLight.intensity <= 0)
+        {
+            MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
+
+            MySceneManagerScript.RestartLevel();
+        }
+           
     }
 
 	// Use this for initialization
