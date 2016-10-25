@@ -15,7 +15,7 @@ public class PlayerHaloController : MonoBehaviour {
 
     public Light HaloLight;
 
-    private MySceneManager MySceneManagerScript;
+    public GameObject MySceneManaObj;
 
     // Add some light to the world.
     public void AddLight()
@@ -30,12 +30,16 @@ public class PlayerHaloController : MonoBehaviour {
         HaloLight.intensity -= AddHaloAmount;
 
         if (HaloLight.intensity <= 0)
+        {
+            MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
+
             MySceneManagerScript.RestartLevel();
+        }
+           
     }
 
 	// Use this for initialization
 	void Start () {
-        MySceneManagerScript = GetComponent<MySceneManager>();
 	}
 	
 	// Update is called once per frame
