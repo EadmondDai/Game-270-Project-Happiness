@@ -3,6 +3,7 @@ using System.Collections;
 
 // Created by Eadmond 10.20.2016
 // This script is responsiable for control the player's moving and play particle ring when collect a friend.
+// This script keep record of number of cubes collected.
 
 // This script access Orbit2D script;
 // This script access PlayerHaloController script;
@@ -17,8 +18,9 @@ public class PlayerMove : MonoBehaviour {
 
     public GameObject MySceManaObj;
 
-    private bool Test = false;
+    public int FriendResued = 0;
 
+    public int FriendNeedForThisLevel = 6;
 	// Use this for initialization
 	void Start () {
         Ring = GetComponent<ParticleSystem>();
@@ -40,13 +42,6 @@ public class PlayerMove : MonoBehaviour {
             moveValue.y = moveInput;   
         }
         transform.Translate(moveValue.normalized * Speed * deltaTime, Space.World);
-
-
-        // Test the changing scene.
-        if (Input.GetKeyDown("space") && !Test)
-        {
-            MySceManaObj.GetComponent<MySceneManager>().NextLevel();
-        }
     }
 
     void OnTriggerEnter(Collider col)
@@ -60,6 +55,8 @@ public class PlayerMove : MonoBehaviour {
                 Ring.Play();
                 orbit2DScript.SetOrbitTrans(transform);
                 HaloController.AddLight();
+
+                FriendResued++;
             }
         }
 
@@ -68,6 +65,11 @@ public class PlayerMove : MonoBehaviour {
             HaloController.MinusLight();
         }
 
+
+        if(FriendResued >= FriendNeedForThisLevel)
+        {
+            MySceManaObj.GetComponent<MySceneManager>().NextLevel();
+        }
     }
 
 
