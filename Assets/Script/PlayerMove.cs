@@ -26,18 +26,18 @@ public class PlayerMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float deltaTime = Time.deltaTime;
-
+        Vector3 moveValue;
+        moveValue.z = 0;
         {
             float moveInput = Input.GetAxis("Horizontal");
-            Vector3 moveValue = new Vector3(moveInput, 0, 0);
-            transform.Translate(moveValue * Speed * deltaTime, Space.World);
+            moveValue.x = moveInput;
         }
 
         {
             float moveInput = Input.GetAxis("Vertical");
-            Vector3 moveValue = new Vector3(0, moveInput, 0);
-            transform.Translate(moveValue * Speed * deltaTime, Space.World);
+            moveValue.y = moveInput;   
         }
+        transform.Translate(moveValue.normalized * Speed * deltaTime, Space.World);
 
     }
 
