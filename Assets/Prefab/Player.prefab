@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012818748770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.96, y: 0, z: -0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -342,6 +342,7 @@ MonoBehaviour:
   AddHaloAmount: 0.1
   AddHaloRangeAmount: 0.1
   HaloLight: {fileID: 108000013179330128}
+  MySceneManaObj: {fileID: 0}
 --- !u!114 &114000012695995468
 MonoBehaviour:
   m_ObjectHideFlags: 1

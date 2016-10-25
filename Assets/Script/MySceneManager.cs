@@ -10,9 +10,23 @@ using UnityEngine.SceneManagement;
 
 public class MySceneManager : MonoBehaviour {
 
+    public int CurrentLevel = 1;
+
+    private string LevelNameBase = "Level ";
+
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextLevel()
+    {
+        CurrentLevel++;
+
+        if( SceneManager.GetSceneByName(LevelNameBase + CurrentLevel.ToString()) != null)
+        {
+            SceneManager.LoadScene(LevelNameBase + CurrentLevel.ToString());
+        }
     }
 
 	// Use this for initialization

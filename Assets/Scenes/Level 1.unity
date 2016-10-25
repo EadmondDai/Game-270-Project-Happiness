@@ -563,8 +563,12 @@ Prefab:
         type: 2}
       propertyPath: MySceneManaObj
       value: 
-      objectReference: {fileID: 1000013660089854, guid: 24993b63f13dc0a468634a46b6949556,
+      objectReference: {fileID: 998489760}
+    - target: {fileID: 114000013935045836, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
         type: 2}
+      propertyPath: MySceManaObj
+      value: 
+      objectReference: {fileID: 998489760}
     m_RemovedComponents:
     - {fileID: 114000011079408614, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
     - {fileID: 114000012695995468, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
@@ -1006,6 +1010,11 @@ Transform:
   - {fileID: 1006464081}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &998489760 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013660089854, guid: 24993b63f13dc0a468634a46b6949556,
+    type: 2}
+  m_PrefabInternal: {fileID: 100156052}
 --- !u!1 &1006464080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,8 +1387,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 48.538002, y: -53.879, z: -46.426003}
   m_Children: []
-  m_Father: {fileID: 1363689761}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &1227401420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,7 +1559,6 @@ Transform:
   - {fileID: 1607000171}
   - {fileID: 2084939703}
   - {fileID: 1356668622}
-  - {fileID: 1222676921}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!1 &1455932549
@@ -1828,7 +1836,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012232796156, guid: ffb717c015f42f24b95d35893a223007, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9.79
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4000012232796156, guid: ffb717c015f42f24b95d35893a223007, type: 2}
       propertyPath: m_LocalRotation.x

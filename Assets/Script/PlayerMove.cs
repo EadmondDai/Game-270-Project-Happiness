@@ -15,7 +15,9 @@ public class PlayerMove : MonoBehaviour {
 
     private PlayerHaloController HaloController;
 
-    bool test = false;
+    public GameObject MySceManaObj;
+
+    private bool Test = false;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +41,12 @@ public class PlayerMove : MonoBehaviour {
         }
         transform.Translate(moveValue.normalized * Speed * deltaTime, Space.World);
 
+
+        // Test the changing scene.
+        if (Input.GetKeyDown("space") && !Test)
+        {
+            MySceManaObj.GetComponent<MySceneManager>().NextLevel();
+        }
     }
 
     void OnTriggerEnter(Collider col)
