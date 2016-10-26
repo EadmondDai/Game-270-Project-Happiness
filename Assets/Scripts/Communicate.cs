@@ -5,7 +5,10 @@ public class Communicate : MonoBehaviour {
     //Behaviour halo;
     Light halo;
     public float fadeSpeed;
+    public float pulseRadius;
     bool fading;
+    private float startingRange;
+    private bool growing;
    // bool faded;
     public bool Fading
     {
@@ -13,34 +16,48 @@ public class Communicate : MonoBehaviour {
         set { fading = value; }
     }
 	void Start () {
-        // halo = (Behaviour)GetComponent("Halo");
         halo = GetComponent<Light>();
-
+        startingRange = halo.range;
+        growing = true;
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (fading)
-            haloFade();
+            HaloFade();
+        else    
+            Pulse();
 	}
 
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
             fading = true;
-            // halo.enabled = false;
-            //haloFade();
     }
    
-    void haloFade()
+    void HaloFade()
     {
-//        if (halo = GetComponent<Light>()) Debug.Log("niccce");
         halo.intensity -= fadeSpeed * Time.deltaTime;
         halo.range -= fadeSpeed * Time.deltaTime;
         if (halo.range <= 0)
             fading = false;
-            //faded = true;
-        
-        //Debug.Log(halo.GetType().GetProperty("size"));//.SetValue(halo, false, null);
+    }
+
+    void Pulse()
+    {
+        if (growing)
+        {
+            //  Debug.Log(halo.range+ " "+ (startingRange-pulseDifference));
+            //   
+            halo.range += pulseRadius * Time.deltaTime;
+            if (halo.range > startingRange + pulseRadius)
+                growing = false;
+        }
+        else
+        { 
+            halo.range -= pulseRadius * Time.deltaTime;
+            if (halo.range < startingRange - pulseRadius)
+                growing = true;
+        }
     }
 }

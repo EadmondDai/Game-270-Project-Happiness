@@ -3,14 +3,25 @@ using System.Collections;
 
 public class SoundManager : MonoBehaviour {
 
-    
-    public AudioSource efxSource;                   //Drag a reference to the audio source which will play the sound effects.
-    public AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
-    public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
-    public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
-    public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
-    private float semitoneConstant = 1.05964f;
 
+    // public AudioSource efxSource;                   //Drag a reference to the audio source which will play the sound effects.
+    // public AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
+   // public AudioClip ;
+   // public AudioClip ;
+    public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
+   // public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
+   // public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
+    private float semitoneConstant = 1.05964f;
+    public int pitchMultiplier;
+
+    public int pianoPitchMultiplier;
+    public int padPitchMultiplier;
+    //    public AudioSource piano;
+    //    public AudioSource pad;
+    public AudioSource[] audioSources;
+    public Collector collector;
+    private bool playing;
+    //public AudioSource pad;
     void Awake()
     {
         //Check if there is already an instance of SoundManager
@@ -24,20 +35,48 @@ public class SoundManager : MonoBehaviour {
 
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);
+        playing = false;
+       // Debug.Log(piano.pitch);
+        
+    }
+
+    void Update()
+    {
+        playing = checkIfPlaying();
+       // playing = pad.isPlaying && piano.isPlaying;
+        if(!playing)
+            PlaySingle();
     }
 
 
     //Used to play single sound clips.
-    public void PlaySingle(AudioClip clip)
+    public void PlaySingle()
     {
         //Set the clip of our efxSource audio source to the clip passed in as a parameter.
-        efxSource.clip = clip;
+        //   efxSource.clip = clip;
 
         //Play the clip.
-        efxSource.Play();
+        //piano.PlayOneShot(piano.clip);
+  //      pad.pitch = Mathf.Pow(semitoneConstant , padPitchMultiplier);
+//        piano.pitch = Mathf.Pow(semitoneConstant, pianoPitchMultiplier);
+ //       if(piano)piano.Play();
+ //       if(pad)pad.Play();
+
+        foreach (AudioSource aso in audioSources)
+        
+            aso.Play();
+        
+
+
     }
+    bool checkIfPlaying()
+    {
 
-
+        foreach (AudioSource aso in audioSources)
+            if (aso.isPlaying) return true;
+        return false;
+    }
+/*
     //RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
     public void RandomizeSfx(params AudioClip[] clips)
     {
@@ -56,4 +95,5 @@ public class SoundManager : MonoBehaviour {
         //Play the clip.
         efxSource.Play();
     }
+    */
 }

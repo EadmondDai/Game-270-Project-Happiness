@@ -7,10 +7,13 @@ public class Collector: MonoBehaviour {
     private float densityStep;
     int collectedParts;
     float maxDensity;
-    // Use this for initialization
+
+    
+        // Use this for initialization
 	void Start () {
         collectedParts = 0;
-        maxDensity = fog.startSize;
+        maxDensity = fog.emissionRate;
+        //maxDensity = fog.startSize;
         densityStep = maxDensity / partsToCollect;
 	}
 	
@@ -23,7 +26,6 @@ public class Collector: MonoBehaviour {
     {
         if( col.tag == "Friend")
         {
-            partsToCollect--;
             changeFogDensity(-densityStep); 
         }
         //todo
@@ -31,7 +33,16 @@ public class Collector: MonoBehaviour {
             changeFogDensity(densityStep);
         }
     }
-
+     void changeFogDensity(float changeBy)
+    {
+        if (fog.emissionRate + changeBy < 0)
+            fog.emissionRate = 0;
+        else if (fog.emissionRate + changeBy > maxDensity)
+            fog.emissionRate = maxDensity;
+        else
+            fog.emissionRate += changeBy;
+    }
+    /*
     void changeFogDensity(float changeBy)
     {
         if (fog.startSize + changeBy < 0)
@@ -41,4 +52,5 @@ public class Collector: MonoBehaviour {
         else
             fog.startSize += changeBy;
     }
+    */
 }
