@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 // Created by Eadmond, 10.24.2016
 // This script is used to control all the scene management and restart the game.
+// This script is able to change different requirement for each level.
 
 // This script is accessed by CameraMove script.
 // This script is accessed by PlayerMove script.
@@ -27,6 +28,12 @@ public class MySceneManager : MonoBehaviour {
         {
             SceneManager.LoadScene(LevelNameBase + CurrentLevel.ToString());
         }
+    }
+
+    // We can added different behaviors in different level.
+    void OnLevelWasLoaded()
+    {
+
     }
 
 	// Use this for initialization
