@@ -7,6 +7,7 @@ public class Collector: MonoBehaviour {
     private float densityStep;
     int collectedParts;
     float maxDensity;
+
     
         // Use this for initialization
 	void Start () {

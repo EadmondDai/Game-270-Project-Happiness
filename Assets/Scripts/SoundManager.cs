@@ -16,8 +16,9 @@ public class SoundManager : MonoBehaviour {
 
     public int pianoPitchMultiplier;
     public int padPitchMultiplier;
-    public AudioSource piano;
-    public AudioSource pad;
+    //    public AudioSource piano;
+    //    public AudioSource pad;
+    public AudioSource[] audioSources;
     public Collector collector;
     private bool playing;
     //public AudioSource pad;
@@ -41,7 +42,8 @@ public class SoundManager : MonoBehaviour {
 
     void Update()
     {
-        playing = pad.isPlaying && piano.isPlaying;
+        playing = checkIfPlaying();
+       // playing = pad.isPlaying && piano.isPlaying;
         if(!playing)
             PlaySingle();
     }
@@ -55,13 +57,25 @@ public class SoundManager : MonoBehaviour {
 
         //Play the clip.
         //piano.PlayOneShot(piano.clip);
-        pad.pitch = Mathf.Pow(semitoneConstant , padPitchMultiplier);
-        piano.pitch = Mathf.Pow(semitoneConstant, pianoPitchMultiplier);
-        piano.Play();
-        pad.Play();
-        
-    }
+  //      pad.pitch = Mathf.Pow(semitoneConstant , padPitchMultiplier);
+//        piano.pitch = Mathf.Pow(semitoneConstant, pianoPitchMultiplier);
+ //       if(piano)piano.Play();
+ //       if(pad)pad.Play();
 
+        foreach (AudioSource aso in audioSources)
+        
+            aso.Play();
+        
+
+
+    }
+    bool checkIfPlaying()
+    {
+
+        foreach (AudioSource aso in audioSources)
+            if (aso.isPlaying) return true;
+        return false;
+    }
 /*
     //RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
     public void RandomizeSfx(params AudioClip[] clips)
