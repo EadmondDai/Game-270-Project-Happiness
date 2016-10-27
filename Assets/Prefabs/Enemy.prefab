@@ -24,6 +24,7 @@ GameObject:
   - 65: {fileID: 65000011118391466}
   - 114: {fileID: 114000010143942236}
   - 108: {fileID: 108000010575817156}
+  - 114: {fileID: 114000013908191742}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -139,3 +140,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeSpeed: 1
   pulseRadius: 0.5
+--- !u!114 &114000013908191742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010234060008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d47eb71d9b5ee488c47099a35b5e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObj: {fileID: 1000012818748770, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
+  ChaseSpeed: 0.003

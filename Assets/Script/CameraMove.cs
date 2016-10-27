@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 // The Camera will move to the first camera point, then continue to next point, untill there is no more point.
 // If the character is outside of the cameraview, it will restart the scene.
 
-
 public class CameraMove : MonoBehaviour
 {
     // Maybe use this in the future, to rotate the camera.
