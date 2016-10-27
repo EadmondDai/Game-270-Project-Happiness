@@ -7,12 +7,15 @@ using System.Collections;
 
 // This script access Orbit2D script;
 // This script access PlayerHaloController script;
+// This script access PlayerAudioController script;
 
 public class PlayerMove : MonoBehaviour {
 
     public float Speed = 1;
 
     private ParticleSystem Ring;
+
+    private PlayerAudioController PlayerAudioScript;
 
     private PlayerHaloController HaloController;
 
@@ -25,6 +28,7 @@ public class PlayerMove : MonoBehaviour {
 	void Start () {
         Ring = GetComponent<ParticleSystem>();
         HaloController = GetComponent<PlayerHaloController>();
+        PlayerAudioScript = GetComponent<PlayerAudioController>();
     }
 	
 	// Update is called once per frame
@@ -57,6 +61,8 @@ public class PlayerMove : MonoBehaviour {
                 HaloController.AddLight();
 
                 FriendResued++;
+
+                PlayerAudioScript.OnCollect(FriendResued);
             }
         }
 

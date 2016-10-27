@@ -527,38 +527,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011079408614, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
-        type: 2}
-      propertyPath: fog
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013117650308, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
-        type: 2}
-      propertyPath: fog
-      value: 
-      objectReference: {fileID: 2027972406}
-    - target: {fileID: 4000013059571398, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013059571398, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013059571398, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011810695086, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013935045836, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
-        type: 2}
-      propertyPath: MySceneManaObj
-      value: 
-      objectReference: {fileID: 1000013660089854, guid: 24993b63f13dc0a468634a46b6949556,
-        type: 2}
     - target: {fileID: 114000011138830652, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
         type: 2}
       propertyPath: MySceneManaObj
@@ -569,9 +537,12 @@ Prefab:
       propertyPath: MySceManaObj
       value: 
       objectReference: {fileID: 998489760}
-    m_RemovedComponents:
-    - {fileID: 114000011079408614, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
-    - {fileID: 114000012695995468, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
+    - target: {fileID: 114000013117650308, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: fog
+      value: 
+      objectReference: {fileID: 2027972406}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &678076404

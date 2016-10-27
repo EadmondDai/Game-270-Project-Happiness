@@ -24,6 +24,7 @@ GameObject:
   - 65: {fileID: 65000012161562204}
   - 114: {fileID: 114000010196319276}
   - 108: {fileID: 108000012954597524}
+  - 114: {fileID: 114000012432057732}
   m_Layer: 0
   m_Name: Friend
   m_TagString: Friend
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010402329452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.566099, y: -1.8745717, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.566099, y: -1.8745717, z: -0.5}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,3 +140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeSpeed: 1
   pulseRadius: 0.5
+--- !u!114 &114000012432057732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010402329452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06936514dac2cd54d9a2ec6dc598a2b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrbitTrans: {fileID: 0}
+  RotateSpeed: 10
+  OrbitDegree: 2
+  radius: 1
+  Size: 1
+  IsOrbiting: 0
