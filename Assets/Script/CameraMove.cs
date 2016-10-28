@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 // The Camera will move to the first camera point, then continue to next point, untill there is no more point.
 // If the character is outside of the cameraview, it will restart the scene.
 
+// This script access the PlayerMove script to check if the player collected enough friend;
+
 public class CameraMove : MonoBehaviour
 {
     // Maybe use this in the future, to rotate the camera.
@@ -44,6 +46,14 @@ public class CameraMove : MonoBehaviour
     // Related to Restart;
 
     public GameObject MySceneManaObj;
+
+    // Related to level end check
+
+    private float LevelCheckTime = 0;
+
+    public float TimeLeftForLevelEnd = 5;
+
+    private PlayerMove PlayerMoveScript;
 
     public void SetCameraPosWithGameobject(GameObject cameraPosContainer)
     {
@@ -108,6 +118,8 @@ public class CameraMove : MonoBehaviour
     { 
         //GameObject manager = GameObject.Find("/CameraPosContainer");
         SetCameraPosWithGameobject(CameraPosContainer);
+
+        PlayerMoveScript = PlayerObj.GetComponent<PlayerMove>();
     }
 
     // Update is called once per frame
@@ -145,8 +157,32 @@ public class CameraMove : MonoBehaviour
 
             MySceneManagerScript.RestartLevel();
         }
-            
 
+
+        // Check if the Camera has reached the last position.
+        if (LevelCheckTime == 0 && IsTheLastPos())
+        {
+            LevelCheckTime = Time.time + TimeLeftForLevelEnd;
+        }
+        else
+        {
+            if (LevelCheckTime <= Time.time)
+            {
+                if (PlayerMoveScript.FriendResued >= PlayerMoveScript.FriendNeedForThisLevel)
+                {
+                    MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
+
+                    MySceneManagerScript.NextLevel();
+                }
+                else
+                {
+                    MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
+
+                    MySceneManagerScript.RestartLevel();
+                }
+            }
+
+        }
     }
 
 

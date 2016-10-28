@@ -53,6 +53,10 @@ public class PlayerMove : MonoBehaviour {
             moveValue.y = moveInput;   
         }
         transform.Translate(moveValue.normalized * Speed * deltaTime, Space.World);
+
+        // Check if satisfied the condition for Next level or spawn a giant enemy.
+
+
     }
 
     void OnTriggerEnter(Collider col)
