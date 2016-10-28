@@ -24,6 +24,13 @@ public class PlayerMove : MonoBehaviour {
     public int FriendResued = 0;
 
     public int FriendNeedForThisLevel = 6;
+
+    // Related to speed
+
+    public float ResqueAddSpeed = 0.02f;
+
+    public float EnemyMinusSpeed = 0.04f;
+
 	// Use this for initialization
 	void Start () {
         Ring = GetComponent<ParticleSystem>();
@@ -62,6 +69,8 @@ public class PlayerMove : MonoBehaviour {
 
                 FriendResued++;
 
+                Speed += ResqueAddSpeed;
+
                 PlayerAudioScript.OnCollect(FriendResued);
             }
         }
@@ -69,6 +78,8 @@ public class PlayerMove : MonoBehaviour {
         if(col.tag == "Enemy")
         {
             HaloController.MinusLight();
+
+            Speed -= EnemyMinusSpeed;
         }
 
 
