@@ -55,6 +55,8 @@ public class CameraMove : MonoBehaviour
 
     private PlayerMove PlayerMoveScript;
 
+    private bool ChangedLevel = false;
+
     public void SetCameraPosWithGameobject(GameObject cameraPosContainer)
     {
         // Before setting the array, clear it first.
@@ -168,9 +170,17 @@ public class CameraMove : MonoBehaviour
         {
             if (PlayerMoveScript.FriendResued >= PlayerMoveScript.FriendNeedForThisLevel)
             {
-                MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
+                // Need to make sure this is one time thing.
+                if (!ChangedLevel)
+                {
+                    MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
 
-                MySceneManagerScript.NextLevel();
+                    MySceneManagerScript.NextLevel();
+
+                    ChangedLevel = true;
+                }
+               
+
             }
             else
             {
