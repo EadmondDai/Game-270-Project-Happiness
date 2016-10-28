@@ -159,29 +159,26 @@ public class CameraMove : MonoBehaviour
         }
 
 
-        // Check if the Camera has reached the last position.
+        //  Check if the Camera has reached the last position.
         if (LevelCheckTime == 0 && IsTheLastPos())
         {
             LevelCheckTime = Time.time + TimeLeftForLevelEnd;
         }
-        else
+        else if(LevelCheckTime <= Time.time && IsTheLastPos())
         {
-            if (LevelCheckTime <= Time.time)
+            if (PlayerMoveScript.FriendResued >= PlayerMoveScript.FriendNeedForThisLevel)
             {
-                if (PlayerMoveScript.FriendResued >= PlayerMoveScript.FriendNeedForThisLevel)
-                {
-                    MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
+                MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
 
-                    MySceneManagerScript.NextLevel();
-                }
-                else
-                {
-                    MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
-
-                    MySceneManagerScript.RestartLevel();
-                }
+                MySceneManagerScript.NextLevel();
             }
+            else
+            {
+                MySceneManager MySceneManagerScript = MySceneManaObj.GetComponent<MySceneManager>();
 
+                MySceneManagerScript.RestartLevel();
+            }
+            
         }
     }
 

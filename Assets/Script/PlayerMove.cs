@@ -87,10 +87,10 @@ public class PlayerMove : MonoBehaviour {
         }
 
 
-        if(FriendResued >= FriendNeedForThisLevel)
-        {
-            MySceManaObj.GetComponent<MySceneManager>().NextLevel();
-        }
+        //if(FriendResued >= FriendNeedForThisLevel)
+        //{
+        //    MySceManaObj.GetComponent<MySceneManager>().NextLevel();
+        //}
     }
 
 
