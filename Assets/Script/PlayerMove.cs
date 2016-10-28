@@ -85,12 +85,6 @@ public class PlayerMove : MonoBehaviour {
 
             Speed -= EnemyMinusSpeed;
         }
-
-
-        //if(FriendResued >= FriendNeedForThisLevel)
-        //{
-        //    MySceManaObj.GetComponent<MySceneManager>().NextLevel();
-        //}
     }
 
 
