@@ -127,6 +127,16 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //REMEMBER TO REMOVE
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            MySceneManager sceneMan = MySceneManaObj.GetComponent<MySceneManager>();
+            Debug.Log(sceneMan);
+            //sceneMan.enabled = true;
+            //MySceneManaObj.active(true);
+           MySceneManaObj.GetComponent<MySceneManager>().NextLevel();
+        }
+       
         if (CameraTransArray == null || CameraTransArray.Count == 0)
             return;
 
