@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 // This script is accessed by CameraMove script.
 // This script is accessed by PlayerMove script.
+// This script is accessed by MySoundManager script.
+
 
 public class MySceneManager : MonoBehaviour {
 
@@ -67,12 +69,7 @@ public class MySceneManager : MonoBehaviour {
     //}
 
 	// Use this for initialization
-	void Start () {
-        //DontDestroyOnLoad(transform.gameObject);
-        //NextLevelToGo = CurrentLevel + 1;
-        //DebugValue = NextLevelToGo;
-
-        //Debug.Log("start ----------------" + NextLevelToGo.ToString() + "    " + DebugValue.ToString());
+	void Start() {  
 
 	}
 	

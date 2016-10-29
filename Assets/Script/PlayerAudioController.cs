@@ -5,8 +5,12 @@ using System.Collections;
 // This script is used to play collect and hurt effect.
 
 // This script is accessed by PlayerMove script.
+// This script access MySceneManager script.
 
 public class PlayerAudioController : MonoBehaviour {
+
+    public GameObject MySceneManagerObj;
+    private MySceneManager MySceneManagerScript;
 
     private AudioSource MyAudioSource;
 
@@ -27,7 +31,9 @@ public class PlayerAudioController : MonoBehaviour {
         if (index < 1)
             return;
 
-        if(index == 1)
+        // Do something with the background music.
+
+        if (index == 1)
         {
             MyAudioSource.clip = Collect2;
         }else if(index == 2)
@@ -69,7 +75,17 @@ public class PlayerAudioController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         MyAudioSource = GetComponent<AudioSource>();
-	}
+
+        MySceneManagerScript = MySceneManagerObj.GetComponent<MySceneManager>();
+
+    
+
+    }
+
+    void NextBMG()
+    {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

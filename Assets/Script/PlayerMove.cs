@@ -8,6 +8,7 @@ using System.Collections;
 // This script access Orbit2D script;
 // This script access PlayerHaloController script;
 // This script access PlayerAudioController script;
+// This script access MySoundManager script.
 
 public class PlayerMove : MonoBehaviour {
 
@@ -31,11 +32,18 @@ public class PlayerMove : MonoBehaviour {
 
     public float EnemyMinusSpeed = 0.04f;
 
+    // Related to level 1 and level 2 music.
+
+    public GameObject MySoundManagerObj;
+
+    private MySoundManager MySoundManagerScript;
+
 	// Use this for initialization
 	void Start () {
         Ring = GetComponent<ParticleSystem>();
         HaloController = GetComponent<PlayerHaloController>();
         PlayerAudioScript = GetComponent<PlayerAudioController>();
+        MySoundManagerScript = MySoundManagerObj.GetComponent<MySoundManager>();
     }
 	
 	// Update is called once per frame
@@ -53,9 +61,6 @@ public class PlayerMove : MonoBehaviour {
             moveValue.y = moveInput;   
         }
         transform.Translate(moveValue.normalized * Speed * deltaTime, Space.World);
-
-        // Check if satisfied the condition for Next level or spawn a giant enemy.
-
 
     }
 
@@ -76,6 +81,8 @@ public class PlayerMove : MonoBehaviour {
                 Speed += ResqueAddSpeed;
 
                 PlayerAudioScript.OnCollect(FriendResued);
+
+                MySoundManagerScript.OnPickUp(FriendResued);
             }
         }
 

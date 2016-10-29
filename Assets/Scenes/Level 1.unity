@@ -100,6 +100,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011401320088, guid: c17c257f25b6269459382106f6c64a8d,
     type: 2}
   m_PrefabInternal: {fileID: 1866948835}
+--- !u!1 &128473898 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013660089854, guid: 24993b63f13dc0a468634a46b6949556,
+    type: 2}
+  m_PrefabInternal: {fileID: 815281324}
 --- !u!1001 &168066217
 Prefab:
   m_ObjectHideFlags: 0
@@ -340,6 +345,80 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000012818748770, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
     type: 2}
   m_PrefabInternal: {fileID: 580513184}
+--- !u!82 &357708588
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 357708587}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &397600824
 Prefab:
   m_ObjectHideFlags: 0
@@ -549,7 +628,7 @@ Prefab:
         type: 2}
       propertyPath: MySceneManaObj
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 128473898}
     - target: {fileID: 114000013935045836, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
         type: 2}
       propertyPath: FriendNeedForThisLevel
@@ -583,6 +662,51 @@ Prefab:
       propertyPath: Hurt
       value: 
       objectReference: {fileID: 8300000, guid: a2996eac3fc40124c8fc0a47dc36a18b, type: 3}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Collect1
+      value: 
+      objectReference: {fileID: 8300000, guid: 47d00e2bd0abcd046914fe8c25f1c462, type: 3}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Collect2
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dc8b59b61c835f43a01797898d0adfb, type: 3}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Collect3
+      value: 
+      objectReference: {fileID: 8300000, guid: 90434ea06f453654ba4002c272674ef7, type: 3}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Collect4
+      value: 
+      objectReference: {fileID: 8300000, guid: 70e8ca5a78c7c6e449c98a6d5b5734fe, type: 3}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Collect5
+      value: 
+      objectReference: {fileID: 8300000, guid: fa4b9db208ca31449a537d20ddc41e49, type: 3}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Collect6
+      value: 
+      objectReference: {fileID: 8300000, guid: d409739bf23f4a441bafe440d6a743ce, type: 3}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Collect7
+      value: 
+      objectReference: {fileID: 8300000, guid: 85e2fdd0c68139040a34dcf84d2f15b3, type: 3}
+    - target: {fileID: 114000013935045836, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: MySoundManagerObj
+      value: 
+      objectReference: {fileID: 128473898}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: MySceneManagerObj
+      value: 
+      objectReference: {fileID: 128473898}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
   m_IsPrefabParent: 0
@@ -838,13 +962,54 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: aaeee37edf709084dad2529e082bbfce, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 114000012341999440, guid: 24993b63f13dc0a468634a46b6949556,
         type: 2}
       propertyPath: _NextLevelToGo
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: SceneManager
+      value: 
+      objectReference: {fileID: 128473898}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: BGMLoop1
+      value: 
+      objectReference: {fileID: 8300000, guid: 1045c804f28dec0499d06510fa1c7082, type: 3}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: BGMLoop2
+      value: 
+      objectReference: {fileID: 8300000, guid: d6258437df4c56b4497b7455ae054f66, type: 3}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: BGMLoop3
+      value: 
+      objectReference: {fileID: 8300000, guid: 4680e4b4c429c8f489b4930f5470a513, type: 3}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: BGMLoop4
+      value: 
+      objectReference: {fileID: 8300000, guid: 41e98b93baefd894c8d50b246f840b09, type: 3}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: BGMLoop5
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dc6e5299e0b4654094140173e78878d, type: 3}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: BGMLoop6
+      value: 
+      objectReference: {fileID: 8300000, guid: 917aa6e84732c8647a39d547da7ef3fe, type: 3}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: BGMLoop7
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ab2fe35b93810c4d88fb636356befbc, type: 3}
+    m_RemovedComponents:
+    - {fileID: 82000012102672734, guid: 24993b63f13dc0a468634a46b6949556, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 24993b63f13dc0a468634a46b6949556, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &833472806

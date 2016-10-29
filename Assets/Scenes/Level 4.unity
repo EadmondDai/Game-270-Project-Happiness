@@ -579,6 +579,11 @@ Prefab:
       propertyPath: NextLevelToGo
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011592480886, guid: 24993b63f13dc0a468634a46b6949556,
+        type: 2}
+      propertyPath: SceneManager
+      value: 
+      objectReference: {fileID: 291835245}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24993b63f13dc0a468634a46b6949556, type: 2}
   m_IsPrefabParent: 0
@@ -2096,6 +2101,21 @@ Prefab:
       propertyPath: FriendNeedForThisLevel
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: MySceneManagerObj
+      value: 
+      objectReference: {fileID: 291835245}
+    - target: {fileID: 114000013935045836, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: MySoundManagerObj
+      value: 
+      objectReference: {fileID: 291835245}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: a2996eac3fc40124c8fc0a47dc36a18b, type: 3}
     m_RemovedComponents:
     - {fileID: 114000011079408614, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
     - {fileID: 114000012695995468, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
