@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000011810695086
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012787196628
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012818748770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.96, y: 0, z: -0.5}
+  m_LocalPosition: {x: -5.25, y: 0, z: -0.5}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ea5820ca8b517458c73cb9b6f019ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partsToCollect: 6
+  partsToCollect: 9
   fog: {fileID: 0}
 --- !u!114 &114000013166355238
 MonoBehaviour:
@@ -534,9 +534,9 @@ MonoBehaviour:
   Speed: 1
   MySceManaObj: {fileID: 0}
   FriendResued: 0
-  FriendNeedForThisLevel: 6
-  ResqueAddSpeed: 0.02
-  EnemyMinusSpeed: 0.04
+  FriendNeedForThisLevel: 1
+  ResqueAddSpeed: 0.1
+  EnemyMinusSpeed: 0.2
 --- !u!198 &198000011218904082
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -587,7 +587,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1976381219
+  randomSeed: 54620197
   InitialModule:
     serializedVersion: 2
     enabled: 1

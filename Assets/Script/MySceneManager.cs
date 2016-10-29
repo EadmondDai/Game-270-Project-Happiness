@@ -1,20 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.ImageEffects;
 
 // Created by Eadmond, 10.24.2016
 // This script is used to control all the scene management and restart the game.
 // This script is able to change different requirement for each level.
 
 // This script is accessed by CameraMove script.
-// This script is accessed by PlayerMove script.
+// This script is accessed by PlayerMove script
+
 
 public class MySceneManager : MonoBehaviour {
 
     // Something wrong with these variables. 
     // Started from this one.
     public int CurrentLevel = 0;
-
+    GameObject cam;
+    [SerializeField]
+    private BlurOptimized bo;
+    Bloom bloom;
+    private bool ending;
     //public int NextLevelToGo
     //{
     //    get { return _NextLevelToGo; }
@@ -75,11 +81,26 @@ public class MySceneManager : MonoBehaviour {
         //Debug.Log("start ----------------" + NextLevelToGo.ToString() + "    " + DebugValue.ToString());
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
+    // Update is called once per frame
+    //END LEVEL
+    void Update () {
+        if (ending)
+            EndLevel();
     }
 
-    
+    void Awake()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        // bo = cam.GetComponent<BlurOptimized>();
+        bloom = cam.GetComponent<Bloom>();
+        ending = false;
+    }
+
+    void EndLevel()
+    {
+        bo.enabled = true;
+        bo.blurSize += 1 * Time.deltaTime;
+        
+    }
 }
