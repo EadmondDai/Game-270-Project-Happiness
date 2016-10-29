@@ -578,6 +578,11 @@ Prefab:
       propertyPath: EnemyMinusSpeed
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013166355238, guid: 4882287ab1ca4fc4e9b2308a38209d0d,
+        type: 2}
+      propertyPath: Hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: a2996eac3fc40124c8fc0a47dc36a18b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
   m_IsPrefabParent: 0
@@ -1118,7 +1123,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1006464080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.91, y: -1.43, z: 0}
+  m_LocalPosition: {x: 33.91, y: 0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []

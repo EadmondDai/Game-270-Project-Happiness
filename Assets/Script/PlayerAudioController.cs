@@ -18,40 +18,49 @@ public class PlayerAudioController : MonoBehaviour {
     public AudioClip Collect6;
     public AudioClip Collect7;
 
+    public AudioClip Hurt;
+
     private string CollectNameBase = "Collect";
 
     public void OnCollect(int index)
     {
-        if (index < 1 || index > 7)
+        if (index < 1)
             return;
 
         if(index == 1)
         {
-            MyAudioSource.clip = Collect1;
-        }else if(index == 2)
-        {
             MyAudioSource.clip = Collect2;
-        }
-        else if (index == 3)
+        }else if(index == 2)
         {
             MyAudioSource.clip = Collect3;
         }
-        else if (index == 4)
+        else if (index == 3)
         {
             MyAudioSource.clip = Collect4;
         }
-        else if (index == 5)
+        else if (index == 4)
         {
             MyAudioSource.clip = Collect5;
         }
-        else if (index == 6)
+        else if (index == 5)
         {
             MyAudioSource.clip = Collect6;
         }
-        else if (index == 7)
+        else if (index == 6)
         {
             MyAudioSource.clip = Collect7;
         }
+        else if (index >= 7)
+        {
+            MyAudioSource.clip = Collect7;
+        }
+
+        MyAudioSource.Play();
+    }
+
+    public void OnHurt()
+    {
+        MyAudioSource.clip = Hurt;
 
         MyAudioSource.Play();
     }

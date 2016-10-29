@@ -84,6 +84,8 @@ public class PlayerMove : MonoBehaviour {
             HaloController.MinusLight();
 
             Speed -= EnemyMinusSpeed;
+
+            PlayerAudioScript.OnHurt();
         }
     }
 
