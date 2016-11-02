@@ -1749,6 +1749,10 @@ Prefab:
       propertyPath: Hurt
       value: 
       objectReference: {fileID: 8300000, guid: a2996eac3fc40124c8fc0a47dc36a18b, type: 3}
+    - target: {fileID: 1000010723183656, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000011079408614, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
     - {fileID: 114000012695995468, guid: 4882287ab1ca4fc4e9b2308a38209d0d, type: 2}
